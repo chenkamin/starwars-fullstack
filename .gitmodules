@@ -1,0 +1,6 @@
+[submodule "back"]
+	path = back
+	url = https://github.com/chenkamin/starwars-fullstack
+[submodule "front"]
+	path = front
+	url = https://github.com/chenkamin/starwars-fullstack

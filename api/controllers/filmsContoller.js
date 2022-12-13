@@ -1,46 +1,44 @@
 const makeApiCall = require("../services/apiService")
+const AppError = require("../utils/appError")
+const apiMap = {
+  characters: "people",
+  vehicles: "vehicles",
+}
 
-
-exports.getFilms = async (req, res) => {
+exports.getFilms = async (req, res, next) => {
   let result;
-  try{
+  try {
     let query = req.query.title ? `?search=${req.query.title}` : ''
-    result = await makeApiCall('GET',`films/${query}`)
-  }catch(e){
-    res.json("error",e)
+    result = await makeApiCall('GET', `films/${query}`)
+  } catch (e) {
+    console.log("ERROR??")
+    // res.json("error",e)
+    next(new AppError(e, 404));
+
   }
   res.status(200).json(result)
 
 }
 
 
-const apiMap = {
-  characters:"people",
-  vehicles:"vehicles",
-}
 
-exports.getFilm = async (req, res) => {
-  
+
+exports.getFilm = async (req, res, next) => {
   let expandQueryResults = [];
-  const {id} = req.params
-  const {expand} = req.query
-  if(!apiMap[expand]){
+  const { id } = req.params
+  const { expand } = req.query
+  if (!apiMap[expand]) {
     console.log("ERROR??")
-    return res.json("error","invalid expand query")
+    return res.json("error", "invalid expand query")
   }
-  try{
-    // console.log('query',expand )
-    // console.log("map",apiMap[expand])
-    let result = await makeApiCall('GET',`films/${id}`)
-    // console.log(result[expand])
-    for(let char of result[expand]){
-      let result = await makeApiCall('GET',char)
+  try {
+    let result = await makeApiCall('GET', `films/${id}`)
+    for (let char of result[expand]) {
+      let result = await makeApiCall('GET', char)
       expandQueryResults.push(result)
     }
-      res.status(200).json(expandQueryResults)
-
-  }catch(e){
-    console.log("2 error!!")
-    res.status(404).json("error",e)
-  } 
+    res.status(200).json(expandQueryResults)
+  } catch (e) {
+    next(new AppError(e, 404));
+  }
 }

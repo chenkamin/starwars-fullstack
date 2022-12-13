@@ -1,20 +1,20 @@
 version: '3.8'
 services:
   api:
-    build: /back
+    build: /api
     container_name: back_backend
     ports:
       - '4000:4000'
     volumes:
-      - ./back/:/back/
-      - /back/node_modules
-  # client:
-    # build: ./front
-    # container_name: front_frontend
-    # ports:
-      # - '3000:3000'
-    # volumes:
-        # - ./front/:/front/
-        # - /front/node_modules
-    # stdin_open: true
-    # tty: true
+      - ./api/:/api/
+      - /api/node_modules
+  client:
+    build: ./client
+    container_name: client_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+        - ./client/:/client/
+        - /client/node_modules
+    stdin_open: true
+    tty: true

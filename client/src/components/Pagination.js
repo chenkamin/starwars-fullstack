@@ -18,19 +18,16 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                 <li className="page-item">
                     <a className="page-link" 
                         onClick={prevPage} 
-                        href='#'>
-                        
+                        href='#'>     
                         Previous
                     </a>
                 </li>
                 {pageNumbers.map(pgNumber => (
                     <li key={pgNumber} 
                         className= {`page-item ${currentPage == pgNumber ? 'active' : ''} `} >
-
                         <a onClick={() => setCurrentPage(pgNumber)}  
                             className='page-link' 
-                            href='#'>
-                            
+                            href='#'>           
                             {pgNumber}
                         </a>
                     </li>
@@ -38,8 +35,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                 <li className="page-item">
                     <a className="page-link" 
                         onClick={nextPage}
-                        href='#'>
-                        
+                        href='#'>       
                         Next
                     </a>
                 </li>

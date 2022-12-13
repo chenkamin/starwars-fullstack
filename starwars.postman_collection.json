@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "dd831a18-32bb-4535-84f0-bb9d83f801a4",
+		"name": "starwars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7123827"
+	},
+	"item": [
+		{
+			"name": "getFilmById - exapnd as query param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/films/1?expand=vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"films",
+						"1"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "vehicles"
+						},
+						{
+							"key": "expand",
+							"value": "characters",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFilms - title as a query param",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/films?title=hope",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"films"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "hope"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

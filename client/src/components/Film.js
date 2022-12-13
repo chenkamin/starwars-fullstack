@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import makeApiCall from "../utils/apiService";
+import React, { useState } from "react";
 import Pagination from "./Pagination";
 function Film({characters}) {
   const [currentPage, setCurrentPage] = useState(1);

@@ -32,11 +32,11 @@ function Film({characters}) {
   return ( 
   <div> 
      {renderTable()}
-    <Pagination 
+    {currentRecords.length >0 ?<Pagination 
     nPages={nPages} 
     currentPage={currentPage} 
     setCurrentPage={setCurrentPage} 
-    />
+    /> : null }
   </div>
   )
   }

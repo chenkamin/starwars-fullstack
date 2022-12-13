@@ -4,7 +4,6 @@ import debounce from "../services/debounceService";
 import Films from "./Films";
 import Film from "./Film";
 import ErrorHandler from "./ErrorHandler";
-import {ErrorBoundary} from 'react-error-boundary'
 
 
 function App() {
@@ -13,12 +12,7 @@ function App() {
   const [characters, setCharacters] = useState([])
   const inputRef = useRef(null);
   const [error, setError] = useState("");
- 
-const renderError = (error) => {
-  return(
-    <ErrorHandler error={error}/>
-  )
-}
+
 
   const onChange = (e) => {
     const getFilms = async () => {

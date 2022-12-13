@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Pagination from "./Pagination";
 function ErrorHandler({error}) {
   return (
     <div role="alert">

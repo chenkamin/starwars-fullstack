@@ -16,8 +16,7 @@ cd to root directory and run
 # endpoints:
 - GET api/films with optional title param
 - GET /api//film/:id with optional expand param
-- If you are using postman:
-- You can view the postman collection in the project and import it to postman if needed
+- If you are using postman , you can view the postman collection and import it if needed
 
 # Curl examples:
 

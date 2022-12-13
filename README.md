@@ -6,7 +6,7 @@ Technologies : Nodejs, React, Docker.
 
 
 - Clone the project.
-cd to root directory and run 
+- cd to root directory and run.
 1) docker-compose build
 2) docker-compose up
 

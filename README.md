@@ -19,9 +19,9 @@ cd to root directory and run
 - If you are using postman:
 - You can view the postman collection in the project and import it to postman if needed
 
-# Here are some Curl examples in case you are not using postman:
+# Curl examples:
 
--curl --location --request GET 'localhost:4000/api/films/1?expand=characters'
--curl --location --request GET 'localhost:4000/api/films/1?expand=vehicles'
--curl --location --request GET 'localhost:4000/api/films'
--curl --location --request GET 'localhost:4000/api/films?title=hope'
+- curl --location --request GET 'localhost:4000/api/films/1?expand=characters'
+- curl --location --request GET 'localhost:4000/api/films/1?expand=vehicles'
+- curl --location --request GET 'localhost:4000/api/films'
+- curl --location --request GET 'localhost:4000/api/films?title=hope'

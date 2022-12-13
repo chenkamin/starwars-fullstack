@@ -6,7 +6,7 @@ Technologies : Nodejs, React, Docker.
 
 
 - Clone the project.
-cd to root directory and run 
+- cd to root directory and run.
 1) docker-compose build
 2) docker-compose up
 
@@ -14,7 +14,7 @@ cd to root directory and run
 
 
 # endpoints:
-- GET api/films with optional title param
+- GET /api/films with optional title param
 - GET /api//film/:id with optional expand param
 - If you are using postman , you can view the postman collection and import it if needed
 

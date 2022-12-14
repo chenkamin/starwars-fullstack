@@ -11,10 +11,7 @@ exports.getFilms = async (req, res, next) => {
     let query = req.query.title ? `?search=${req.query.title}` : ''
     result = await makeApiCall('GET', `films/${query}`)
   } catch (e) {
-    console.log("ERROR??")
-    // res.json("error",e)
     next(new AppError(e, 404));
-
   }
   res.status(200).json(result)
 
@@ -28,7 +25,6 @@ exports.getFilm = async (req, res, next) => {
   const { id } = req.params
   const { expand } = req.query
   if (!apiMap[expand]) {
-    console.log("ERROR??")
     return res.json("error", "invalid expand query")
   }
   try {

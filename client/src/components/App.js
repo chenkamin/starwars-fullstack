@@ -21,7 +21,6 @@ function App() {
         setFilms(response.results);
       }catch(e){
         console.log(e)
-        console.log("please try again")
         setError(e)
       }
     }

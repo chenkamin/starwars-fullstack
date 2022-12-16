@@ -1,7 +1,7 @@
-FROM node:16.8.0-alpine
-WORKDIR ./server
-COPY package.json ./
-COPY package-lock.json ./
+FROM node:latest
+WORKDIR ./api
+COPY package.json /
+COPY package-lock.json /
 COPY ./ ./
 RUN npm i
 EXPOSE 4000
